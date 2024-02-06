@@ -107,3 +107,53 @@ namespace PDFPW
 //        Console.WriteLine("PDF protegido com sucesso!");
 //    }
 //}
+
+
+
+//using System;
+//using System.IO;
+//using iText.Kernel.Pdf;
+//using iText.Kernel.Pdf.Encryption;
+
+//class Program
+//{
+//    static void Main(string[] args)
+//    {
+//        // Caminho para o arquivo PDF existente
+//        string pdfFilePath = "existing_file.pdf";
+
+//        // Caminho para o novo arquivo PDF protegido
+//        string outputPdfPath = "output_protected.pdf";
+
+//        // Senha para o usuário e senha do proprietário
+//        string userPassword = "userPassword";
+//        string ownerPassword = "ownerPassword";
+
+//        // Permissões do PDF (somente leitura)
+//        var permissions = EncryptionConstants.ALLOW_PRINTING;
+
+//        // Aplicar proteção por senha com permissões restritas ao PDF existente
+//        ApplyPdfPasswordProtection(pdfFilePath, outputPdfPath, userPassword, ownerPassword, permissions);
+
+//        Console.WriteLine("PDF protegido como somente leitura com sucesso!");
+//    }
+
+//    static void ApplyPdfPasswordProtection(string inputPdfPath, string outputPdfPath, string userPassword, string ownerPassword, int permissions)
+//    {
+//        // Abrir o PDF existente
+//        using (var pdfReader = new PdfReader(inputPdfPath))
+//        using (var pdfWriter = new PdfWriter(outputPdfPath))
+//        {
+//            // Configurar a proteção por senha
+//            var encryptionProperties = new PdfEncryption();
+//            encryptionProperties.SetUserPassword(System.Text.Encoding.UTF8.GetBytes(userPassword));
+//            encryptionProperties.SetOwnerPassword(System.Text.Encoding.UTF8.GetBytes(ownerPassword));
+//            encryptionProperties.AddPermissions(permissions);
+
+//            // Aplicar a proteção por senha ao PDF
+//            var pdfDocument = new PdfDocument(pdfReader, pdfWriter);
+//            pdfDocument.SetEncryption(encryptionProperties);
+//        }
+//    }
+//}
+
