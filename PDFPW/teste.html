@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <style type="text/css">
+        <!-- @@page {
+            margin: 10mm;
+            size: A4 portrait;
+        }
+        @@page landscape {
+            size: A4 landscape;
+        }
+        body {
+            margin: 0;
+			background-color: #000;
+        }
+        .page {
+            position: relative;
+            margin: 0;
+            page-break-after: always;
+        }
+            .page.landscape {
+                page: landscape;
+            }
+        .same-page {
+            page-break-inside: avoid;
+        }
+        .screen-only {
+            display: none;
+        } -->
+		
+		
+		
+		<!-- body { -->
+		  <!-- background: rgb(204, 204, 204); -->
+		<!-- } -->
+		<!-- page { -->
+		  <!-- background: white; -->
+		  <!-- display: block; -->
+		  <!-- margin: 0 auto; -->
+		  <!-- margin-bottom: 0.5cm; -->
+		  <!-- box-shadow: 0 0 0.5cm rgba(0, 0, 0, 0.5); -->
+		<!-- <!-- } --> -->
+		<!-- <!-- page[size="A4"] { --> -->
+		  <!-- <!-- width: 21cm; --> -->
+		  <!-- <!-- height: 29.7cm; --> -->
+		<!-- <!-- } --> -->
+		<!-- <!-- page[size="A4"][layout="portrait"] { --> -->
+		  <!-- <!-- width: 29.7cm; --> -->
+		  <!-- <!-- height: 21cm; --> -->
+		<!-- <!-- } --> -->
+		
+		<!-- @media print {     -->
+		<!-- .no-print, .no-print * { -->
+			<!-- display: none !important; -->
+		  <!-- } -->
+		<!-- } -->
+		<!-- @media print { -->
+		  <!-- body, -->
+		  <!-- page { -->
+			<!-- margin: 0; -->
+			<!-- box-shadow: 0; -->
+		  <!-- } -->
+		<!-- } -->
+		
+		<!-- .fundo { -->
+			<!-- background-image: url("https://designconceitual.com.br/wp-content/uploads/2023/12/Ita%C3%BA-novo-logotipo-2023.jpg"); -->
+			<!-- background-repeat: no-repeat; -->
+			<!-- background-color: red; -->
+			
+		<!-- } -->
+		<!-- h1 { color: #fff; } -->
+		
+		
+		.page {
+			width: 1120px;
+			height: 790px;
+			border: 2px solid #fff;
+			text-align: center;
+		}
+
+		.capa {
+			background-image: url("https://designconceitual.com.br/wp-content/uploads/2023/12/Ita%C3%BA-novo-logotipo-2023.jpg");
+			background-size: 1120px 790px;
+		}
+		
+		.conteudo {
+			background-image: url("https://www.mobiletime.com.br/wp-content/uploads/2022/06/OOHClickItau960x576px.jpg");
+			background-size: 1120px 790px;
+		}
+		
+		.grafico {
+			background-color: #fff;
+		}
+		
+		h1 {
+			color: orange;
+			padding: 20px;
+		}
+		
+		table {
+			padding: 20px;
+			width: 100%;			
+		}
+		
+		table td {
+			border: 1px solid #696969;
+		}
+		
+		
+    </style>
+    
+</head>
+<body>
+    <div class="page capa">
+		
+	</div>
+	<div class="page conteudo">
+	
+	</div>
+	
+	<div class="page grafico">
+	
+		<h1>Rentabilidade</h1>
+	
+		<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+		<!-- Elemento canvas para renderizar o gráfico -->
+		<canvas id="myChart" width="1120" height="400" style="padding: 20px"></canvas>
+
+		<script>
+			// Dados do gráfico (exemplo)
+			var data = {
+				labels: ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio'],
+				datasets: [{
+					label: 'Vendas Mensais',
+					backgroundColor: 'rgba(75, 192, 192, 0.2)',
+					borderColor: 'rgba(75, 192, 192, 1)',
+					borderWidth: 1,
+					data: [65, 59, 80, 81, 56],
+				}]
+			};
+
+			// Configurações do gráfico
+			var options = {
+				scales: {
+					y: {
+						beginAtZero: true
+					}
+				}
+			};
+
+			// Obtenha o contexto do canvas
+			var ctx = document.getElementById('myChart').getContext('2d');
+
+			// Crie o gráfico de barras
+			var myChart = new Chart(ctx, {
+				type: 'bar',
+				data: data,
+				options: options
+			});
+		</script>
+
+		<table>
+	  <thead>
+		<tr>
+		  <th>Student ID</th>
+		  <th>Name</th>
+		  <th>Major</th>
+		  <th>Credits</th>
+		</tr>
+	  </thead>
+	  <tbody>
+		<tr>
+		  <td>3741255</td>
+		  <td>Jones, Martha</td>
+		  <td>Computer Science</td>
+		  <td>240</td>
+		</tr>
+		<tr>
+		  <td>3971244</td>
+		  <td>Nim, Victor</td>
+		  <td>Russian Literature</td>
+		  <td>220</td>
+		</tr>
+		<tr>
+		  <td>4100332</td>
+		  <td>Petrov, Alexandra</td>
+		  <td>Astrophysics</td>
+		  <td>260</td>
+		</tr>
+	  </tbody>
+	</table>
+
+	</div>
+</body>
+</html>
